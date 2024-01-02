@@ -60,14 +60,14 @@ if(email === emailDelAdministrador) {
     return res.redirect('/product'); 
 };
 
-router.get('/logout', async (req, res) => {
-    res.sessions.destroy(e => console.log(e));
-    res.redirect('/login ? mensaje ) logout correcto!!');
-}); = 
+router.get('/logout', async (req,res) => {
+    req.session.destroy(e=> console.error(e)),
+    res.redirect('/login?mensaje=logout correcto... !')
+}) = 
 
 
 function validarCorreoElectronico(correo) {
-    const expresionRegular = '';
+    const expresionRegular = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return expresionRegular.test(correo); 
 };
 validarCorreoElectronico()
